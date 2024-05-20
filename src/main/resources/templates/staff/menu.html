@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{blocks/standart-sample :: head}"></head>
+<body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
+
+<div class="site-wrap">
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <div class="site-logo mr-auto w-25"><a href="#">Dl-stats</a></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="intro-section single-cover" id="home-section">
+        <div class="slide-1 " data-stellar-background-ratio="0.5"
+             th:style="|background-image: url(@{/images/img_2.jpg});|">
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col-lg-6">
+                    <h1 data-aos="fade-up " data-aos-delay="0">Stats</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5">
+                    <div class="mb-5">
+                        <h3 class="text-black">Menu</h3>
+                        <table class="table table-striped" id="search-result-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Название</th>
+                                <th scope="col">Статистика</th>
+                                <th scope="col">Оценка с dl-ido</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="tableBody" th:each="course : ${courses}">
+                                <td th:text="${course.name}"></td>
+                                <td><a th:href="'/staff/stats/' + ${course.id}">Перейти...</a></td>
+                                <td><a th:href="${tasksStatsUrl} + '?id='+ ${course.id}">Перейти...</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 pl-lg-5">
+                    <div class="mb-5 text-center border rounded course-instructor">
+                        <h3 class="mb-5 text-black text-uppercase h6 border-bottom pb-3">Профиль</h3>
+                        <div class="mb-4 text-center">
+                            <a class="btn btn-primary" href="/login">Выйти</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="~{blocks/standart-sample :: footer}"></footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{blocks/standart-sample :: head}"></head>
+<body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
+<h1>404</h1>
+<p>Не все двери открыты...</p>
+<p>Возможно эта страница временно не доступна, попробуйте позже</p>
+<p th:text="'error: ' + ${errorMassage}"></p>
+</body>
+</html>

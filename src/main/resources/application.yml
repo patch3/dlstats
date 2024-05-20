@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  address: localhost
+  tomcat:
+    max-http-form-post-size: -1
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dlstats
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+
+
+security.remember.time: 86400
+
+parse:
+  driver: firefox
+  auth:
+    url: "https://dl-ido.spbstu.ru/login/index.php"
+    profile:
+      username: ""
+      password: ""
+  course:
+    tasks:
+      url: "https://dl-ido.spbstu.ru/grade/report/grader/index.php"
+      stats.url: "https://dl-ido.spbstu.ru/mod/vpl/views/submissionslist.php"
+
+    course.url: "https://dl-ido.spbstu.ru/course/view.php"
+    ids: 945
+    student.url: "https://dl-ido.spbstu.ru/user/profile.php"
+    export.exel:
+        url: "https://dl-ido.spbstu.ru/grade/export/xls/index.php"
+        name.file: "Python. АДвМ Оценки.xlsx"
