@@ -1,8 +1,7 @@
-package ru.spbstu.dlstats.utils;
+package ru.spbstu.dlstats;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import ru.spbstu.dlstats.DLStatsApplication;
 
 public class ServletInitializer extends SpringBootServletInitializer {
 
